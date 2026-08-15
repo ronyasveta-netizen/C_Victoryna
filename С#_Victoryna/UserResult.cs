@@ -17,9 +17,6 @@ namespace С__Victoryna
             Date = date;
         }
 
-        public override string ToString()
-        {
-            return $" {VictorynaName}|{CorrectAnswers}|{Date:yyyy-MM-dd}";
-        }
+        public override string ToString() => $" {VictorynaName}|{CorrectAnswers}|{Date:yyyy-MM-dd}";
     }
 }

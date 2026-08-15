@@ -17,10 +17,6 @@ namespace С__Victoryna
             CorrectIndexes = correctIndexes;
         }
 
-        public override string ToString()
-        {
-            // Формат для збереження у файл (можемо змінити пізніше)
-            return $"{Text}|{string.Join(";", Answers)}|{string.Join(",", CorrectIndexes)}";
-        }
+        public override string ToString() => $"{Text}|{string.Join(";", Answers)}|{string.Join(",", CorrectIndexes)}";
     }
 }

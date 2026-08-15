@@ -31,10 +31,7 @@ namespace С__Victoryna
         {
             Results.Add(result);
         }
-        public override string ToString()
-        {
-            return $"{Login}|{Password}|{BirthDate:yyyy-MM-dd}";
-        }
+        public override string ToString() => $"{Login}|{Password}|{BirthDate:yyyy-MM-dd}";
     }
 }
 
