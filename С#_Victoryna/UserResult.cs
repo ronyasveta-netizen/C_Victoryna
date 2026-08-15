@@ -4,7 +4,7 @@ using System.Text;
 
 namespace С__Victoryna
 {
-    public class UserResult
+    class UserResult
     {
         public string VictorynaName { get; set; }      // Назва вікторини
         public int CorrectAnswers { get; set; }            // Кількість правильних відповідей

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace С__Victoryna
 {
-    public class User
+    class User
     {
         public string Login { get; private set; }
         public string Password { get; private set; }
