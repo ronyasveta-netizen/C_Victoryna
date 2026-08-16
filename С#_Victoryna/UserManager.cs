@@ -66,27 +66,27 @@ namespace С__Victoryna
         // Валідація пароля
         private bool IsPasswordValid(string password)
         {
-            if (password.Length < 6)
+            if (password.Length < 8)
             {
-                Console.WriteLine("Пароль має містити мінімум 6 символів.");
+                Console.WriteLine("Пароль має містити мінімум 8 символів");
                 return false;
             }
 
             if (!password.Any(char.IsDigit))
             {
-                Console.WriteLine("Пароль має містити хоча б одну цифру.");
+                Console.WriteLine("Пароль має містити хоча б одну цифру");
                 return false;
             }
 
             if (!password.Any(char.IsUpper))
             {
-                Console.WriteLine("Пароль має містити хоча б одну велику літеру.");
+                Console.WriteLine("Пароль має містити хоча б одну велику літеру");
                 return false;
             }
 
             if (!Regex.IsMatch(password, @"[\W_]"))
             {
-                Console.WriteLine("Пароль має містити хоча б один спеціальний символ (*, !, ?, @, #, %).");
+                Console.WriteLine("Пароль має містити хоча б один спеціальний символ (*, !, ?, @, #, %)");
                 return false;
             }
 
@@ -98,13 +98,13 @@ namespace С__Victoryna
         {
             if (IsLoginTaken(login))
             {
-                Console.WriteLine("Такий логін вже існує.");
+                Console.WriteLine("Такий логін вже існує");
                 return false;
             }
 
             if (!IsPasswordValid(password))
             {
-                Console.WriteLine("Пароль не відповідає вимогам.");
+                Console.WriteLine("Пароль не відповідає вимогам");
                 return false;
             }
 

@@ -147,12 +147,12 @@ namespace С__Victoryna
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("Вікторина ще не реалізована.");
+                        Console.WriteLine("Вікторина ще не реалізована ");
                         Pause();
                         break;
 
                     case "2":
-                        Console.WriteLine("Результати ще не реалізовані.");
+                        Console.WriteLine("Результати ще не реалізовані ");
                         Pause();
                         break;
 
