@@ -9,15 +9,16 @@ namespace С__Victoryna
         public string Login { get; private set; }
         public string Password { get; private set; }
         public DateTime BirthDate { get; private set; }
-        
+        public string Role { get; private set; }
         public List<UserResult> Results { get; private set; } = new(); // Історія проходження вікторин
 
-        public User(string login, string password, DateTime birthDate)
+        public User(string login, string password, DateTime birthDate, string role = "user")
         {
             
             Login = login;
             Password = password;
             BirthDate = birthDate;
+            Role = role;
         }
         public void ChangePassword(string newPassword)
         {
@@ -31,7 +32,7 @@ namespace С__Victoryna
         {
             Results.Add(result);
         }
-        public override string ToString() => $"{Login}|{Password}|{BirthDate:yyyy-MM-dd}";
+        public override string ToString() => $"{Login}|{Password}|{BirthDate:yyyy-MM-dd}|{Role}";
     }
 }
 

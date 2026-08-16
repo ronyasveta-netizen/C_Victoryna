@@ -13,20 +13,34 @@ namespace С__Victoryna
         public void LoadUsers()
         {
             if (!File.Exists("users.txt"))
+            {
+                // Створюємо адміна за замовчуванням
+                _users.Add(new User("admin", "Admin123!", new DateTime(1973, 8, 13), "admin"));
+                SaveUsers();
                 return;
+            }
 
             var lines = File.ReadAllLines("users.txt");
 
             foreach (var line in lines)
             {
                 var parts = line.Split('|');
-                if (parts.Length != 3) continue;
+                if (parts.Length != 4) continue;
 
                 string login = parts[0];
                 string password = parts[1];
                 DateTime birthDate = DateTime.Parse(parts[2]);
+                string role = parts[3];
 
-                _users.Add(new User(login, password, birthDate));
+                _users.Add(new User(login, password, birthDate, role));
+            }
+
+
+            bool adminExists = _users.Any(u => u.Role == "admin");
+            if (!adminExists)
+            {
+                _users.Add(new User("admin", "Admin123!", new DateTime(1973, 8, 13), "admin"));
+                SaveUsers();
             }
         }
 
@@ -44,6 +58,8 @@ namespace С__Victoryna
         // Перевірка чи логін зайнятий
         public bool IsLoginTaken(string login)
         {
+            if (login == "admin")
+                return true;
             return _users.Any(u => u.Login == login);
         }
 

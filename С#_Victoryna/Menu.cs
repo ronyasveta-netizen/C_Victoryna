@@ -120,15 +120,17 @@ namespace С__Victoryna
                 Pause();
                 return null;
             }
-
-            Console.WriteLine("Реєстрація успішна!");
-            Pause();
-
             return _userManager.Login(login, password);
         }
 
         public void ShowMainMenu(User user)
         {
+            if (user.Role == "admin")
+            {
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.Show(user);
+                return;
+            }
             while (true)
             {
                 Console.Clear();
