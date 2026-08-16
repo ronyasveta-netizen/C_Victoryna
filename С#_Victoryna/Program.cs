@@ -11,17 +11,19 @@ internal class Program
         Console.WriteLine("\t" + s);
         Console.WriteLine(" welcome to test\n");
         Console.ReadKey(true);
-        
+
+        // тест користувач + адмін 
+
         // Створюємо менеджер користувачів
         UserManager userManager = new UserManager();
 
         // Завантажуємо користувачів з файлу (або створюємо автоматом адміна)
         userManager.LoadUsers();
         
-        // Створюємо меню
+        //  меню
         Menu menu = new Menu(userManager);
 
-        // Показуємо меню логіну/реєстрації
+        //  меню логіну/реєстрації
         User user = menu.ShowLoginOrRegister();
 
         // Після входу — показуємо головне меню (або адмін-панель)
